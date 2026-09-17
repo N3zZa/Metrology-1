@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Метрики Холстеда — анализ кода на Groovy</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/sample.js"></script>
+<script defer src="js/tokenizer.js"></script>
+<script defer src="js/halstead.js"></script>
+<script defer src="js/view.js"></script>
+<script defer src="js/main.js"></script>
+</head>
+<body>
+<header class="top">
+    <h1>Метрики Холстеда</h1>
+    <p>Парсер исходного кода на языке Groovy</p>
+</header>
+
+<main class="layout">
+    <section class="panel">
+        <h2>Исходный код</h2>
+        <textarea id="source" spellcheck="false" placeholder="Вставьте код на Groovy"></textarea>
+        <div class="controls">
+            <button id="run" type="button" class="primary">Рассчитать</button>
+            <button id="sample" type="button">Пример</button>
+            <button id="clear" type="button">Очистить</button>
+            <label class="file-label" for="file">Открыть файл</label>
+            <input id="file" type="file" accept=".groovy,.gvy,.txt">
+        </div>
+        <p id="status" class="status"></p>
+    </section>
+
+    <section class="panel">
+        <h2>Базовые метрики</h2>
+        <div class="table-wrap">
+            <table class="grid">
+                <thead>
+                <tr>
+                    <th>j</th>
+                    <th>Оператор</th>
+                    <th>f<sub>1j</sub></th>
+                    <th>i</th>
+                    <th>Операнд</th>
+                    <th>f<sub>2i</sub></th>
+                </tr>
+                </thead>
+                <tbody id="base-body"></tbody>
+            </table>
+        </div>
+
+        <h2>Расширенные метрики</h2>
+        <div id="extended" class="extended"></div>
+    </section>
+</main>
+</body>
+</html>
